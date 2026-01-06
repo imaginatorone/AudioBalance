@@ -1,0 +1,66 @@
+name: Build Plugin
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  release:
+    types: [ created ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v4
+      with:
+        version: 9
+
+    - name: Install dependencies
+      run: pnpm install
+
+    - name: Build plugin
+      run: pnpm run build
+
+    - name: Check build artifacts
+      run: |
+        ls -la dist/
+        echo "Build completed successfully!"
+
+    - name: Create release package
+      if: github.event_name == 'release'
+      run: |
+        mkdir -p release
+        cp -r dist release/
+        cp main.py release/
+        cp plugin.json release/
+        cp package.json release/
+        cp LICENSE release/
+        cp README.md release/
+        cd release
+        zip -r ../AudioBalance-${{ github.event.release.tag_name }}.zip .
+
+    - name: Upload release artifact
+      if: github.event_name == 'release'
+      uses: actions/upload-artifact@v4
+      with:
+        name: AudioBalance-${{ github.event.release.tag_name }}
+        path: AudioBalance-${{ github.event.release.tag_name }}.zip
+
+    - name: Upload to release
+      if: github.event_name == 'release'
+      uses: softprops/action-gh-release@v1
+      with:
+        files: AudioBalance-${{ github.event.release.tag_name }}.zip
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

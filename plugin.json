@@ -1,0 +1,11 @@
+{
+  "name": "Audio Balance",
+  "author": "imaginatorone",
+  "flags": ["_root"],
+  "publish": {
+    "tags": ["audio", "accessibility", "sound"],
+    "description": "Control left/right audio balance for headphones on Steam Deck.",
+    "image": "https://opengraph.githubassets.com/1/SteamDeckHomebrew/decky-loader"
+  },
+  "api_version": 1
+}
