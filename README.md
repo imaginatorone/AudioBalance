@@ -37,3 +37,20 @@ Alternatively, you can build Audio Balance from source by following these steps:
 1. Clone the repository:
    ```bash
    git clone [https://github.com/imaginatorone/AudioBalance.git](https://github.com/imaginatorone/AudioBalance.git)
+2. Navigate to the project directory:
+   ```bash
+   cd AudioBalance
+3. Install dependencies and build:
+   ```bash
+   pnpm install
+   pnpm run build
+4. The built files will be in the dist folder. You can now deploy the plugin folder to your Steam Deck.
+
+### Usage
+1. Open the Quick Access Menu (the `...` button)
+2. Find the Audio Balance plugin (headphones icon).
+3. Adjust the slider to change balance:
+   - Negative values: More volume to the Left.
+   - Positive values: More volume to the Right.
+
+<div align="center"> Built with ❤️ for the Steam Deck community</div>
