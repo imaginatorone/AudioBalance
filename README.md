@@ -1,34 +1,39 @@
-# Audio Balance
+<div align="center">
+  <img src="assets/thumbnail.png" alt="Audio Balance Thumbnail" width="600" />
 
-Decky Loader plugin for Steam Deck that allows you to control left/right audio balance.
+  # Audio Balance
+  
+  <p>
+    A simple Steam Deck plugin for the <a href="https://github.com/SteamDeckHomebrew/decky-loader">Decky Plugin Loader</a> that allows you to control left/right audio balance directly from the Quick Access Menu.
+  </p>
+</div>
+
+---
 
 ## Features
 
-- Adjust audio balance from -100 (full left) to +100 (full right)
-- Settings persist across reboots
-- Simple slider interface
+- 🎚️ **Precise Control:** Adjust audio balance from -100 (full left) to +100 (full right).
+- 💾 **Persistent Settings:** Your preferences are saved automatically and persist across reboots.
+- 🎧 **Native Integration:** Works seamlessly with SteamOS audio via `pactl`.
 
 ## Installation
 
-1. Install Decky Loader on your Steam Deck
-2. Download the latest release
-3. Extract to `~/homebrew/plugins/AudioBalance/`
-4. Restart Decky Loader
+### Store Installation (Recommended)
+The best way to get the plugin is to use the official **Decky Plugin Store**.
+1. Open the Decky Loader menu (plugin store icon).
+2. Search for "Audio Balance".
+3. Click "Install".
 
-## Usage
+### Manual Installation
+If you want to install a specific version or test a release manually:
+1. Go to the [AudioBalance GitHub releases](https://github.com/imaginatorone/AudioBalance/releases).
+2. Download the latest release package (`audio-balance-vX.X.X.zip`).
+3. Move the zip file to your Steam Deck.
+4. Install it using Decky Loader's "Install from Zip" feature (in Developer settings) or extract it manually to `~/homebrew/plugins/AudioBalance/`.
 
-1. Open Decky menu (⋯ button)
-2. Find Audio Balance plugin (headphones icon)
-3. Adjust the slider to change balance
-   - Negative values = more left
-   - Positive values = more right
-   - 0 = centered
+### Building from Source
+Alternatively, you can build Audio Balance from source by following these steps:
 
-Your balance setting will be automatically saved and restored on next boot.
-
-## Building
-
-```bash
-pnpm install
-pnpm run build
-```
+1. Clone the repository:
+   ```bash
+   git clone [https://github.com/imaginatorone/AudioBalance.git](https://github.com/imaginatorone/AudioBalance.git)
