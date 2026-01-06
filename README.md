@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="assets/thumbnail.png" alt="Audio Balance Thumbnail" width="600" />
+  <img src="assets/thumbnail.jpg" alt="Audio Balance Thumbnail" width="600" />
 
   # Audio Balance
   
